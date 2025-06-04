@@ -13,3 +13,4 @@ C:\Users\aayus\Desktop\ASP.NET\App\App.Application\obj\Debug\net8.0\App.Applicat
 C:\Users\aayus\Desktop\ASP.NET\App\App.Application\obj\Debug\net8.0\refint\App.Application.dll
 C:\Users\aayus\Desktop\ASP.NET\App\App.Application\obj\Debug\net8.0\App.Application.pdb
 C:\Users\aayus\Desktop\ASP.NET\App\App.Application\obj\Debug\net8.0\ref\App.Application.dll
+C:\Users\aayus\Desktop\ASP.NET\App\App.Application\obj\Debug\net8.0\App.Application.sourcelink.json
