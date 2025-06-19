@@ -5,10 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Application.Interfaces
-{
-    public interface IProductService
-    {
+namespace App.Application.Interfaces{
+    public interface IProductService{
         Task<List<ProductDTO>> GetAllAsync();
         Task<ProductDTO> GetByIdAsync(int id);
         Task AddAsync(CreateProductDTO product);

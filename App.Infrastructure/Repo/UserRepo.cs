@@ -48,7 +48,7 @@ namespace App.Infrastructure.Repo {
                 signingCredentials: credentials
                 );
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
+        } 
 
         private async Task<User> FindUserByEmail(string email) {
             return await applicationDbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
@@ -67,12 +67,6 @@ namespace App.Infrastructure.Repo {
             });
             await applicationDbContext.SaveChangesAsync();
             return new RegistrationResponse(true, "Registration Successful");
-
-
-
-
-
-
         }
     }
 }

@@ -15,10 +15,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IProductService, ProductService>();
-
 builder.Services.AddScoped<IProductRepository, ProductRespository>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
+//Source :https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/docs/configure-and-customize-swaggergen.md#add-security-definitions-and-requirements
 builder.Services.AddSwaggerGen(swagger => {
     swagger.SwaggerDoc("v1", new OpenApiInfo {
         Version = "v1",
@@ -44,20 +45,24 @@ builder.Services.AddSwaggerGen(swagger => {
     });
 });
 
+builder.Services.AddCors(options => {
+    options.AddPolicy("AllowReactApp",
+        policy => policy.WithOrigins("http://localhost:5173") // React dev server
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
 
 
+//Calls the InfrastructureServices Method at Infrastructure/DependencyInjection/ServiceContainer.cs
 builder.Services.InfrastructureServices(builder.Configuration);
-
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("AllowReactApp");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

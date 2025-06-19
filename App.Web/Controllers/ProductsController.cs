@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitectureDemo.Controllers
+namespace App.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -16,7 +16,7 @@ namespace CleanArchitectureDemo.Controllers
             _productService = productService;
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         [Authorize]
         public async Task<IActionResult> GetAll() => Ok(await _productService.GetAllAsync());
 
@@ -24,21 +24,21 @@ namespace CleanArchitectureDemo.Controllers
         [Authorize]
         public async Task<IActionResult> GetById(int id) => Ok(await _productService.GetByIdAsync(id));
 
-        [HttpPost]
+        [HttpPost("add")]
         [Authorize]
         public async Task<IActionResult> Create(CreateProductDTO dto)
         {
             await _productService.AddAsync(dto);
             return Ok();
         }
-        [HttpPut]
+        [HttpPut("edit")]
         [Authorize]
         public async Task<IActionResult> Update(UpdateProductDTO dto)
         {
             await _productService.UpdateAsync(dto);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("delete/{id}")]
         [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
