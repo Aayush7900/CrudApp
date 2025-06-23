@@ -1,5 +1,94 @@
 [
   {
+    "ContainingType": "App.Web.Controllers.ProductCategoryController",
+    "Method": "GetByName",
+    "RelativePath": "api/ProductCategory/{Name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductCategoryController",
+    "Method": "Create",
+    "RelativePath": "api/ProductCategory/add/{Name}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ImagePath",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductCategoryController",
+    "Method": "GetAll",
+    "RelativePath": "api/ProductCategory/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductCategoryController",
+    "Method": "Delete",
+    "RelativePath": "api/ProductCategory/delete/{Name}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductCategoryController",
+    "Method": "Update",
+    "RelativePath": "api/ProductCategory/edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NewName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagePath",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "App.Web.Controllers.ProductsController",
     "Method": "GetById",
     "RelativePath": "api/Products/{id}",

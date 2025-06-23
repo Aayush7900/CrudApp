@@ -8,5 +8,6 @@ namespace App.Infrastructure.Data {
         public DbSet<User>Users { get; set; }   
         public DbSet<Product>Products { get; set; }
         public DbSet<Employee>Employees { get; set; }
+        public DbSet<ProductCategory> ProductCategory { get; set; }
     }
 }

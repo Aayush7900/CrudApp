@@ -175,3 +175,4 @@ C:\Users\aayus\Desktop\ASP.NET\App\App.Web\bin\Debug\net8.0\App.Infrastructure.p
 C:\Users\aayus\Desktop\ASP.NET\App\App.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\aayus\Desktop\ASP.NET\App\App.Web\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\aayus\Desktop\ASP.NET\App\App.Web\obj\Debug\net8.0\App.Web.sourcelink.json
+C:\Users\aayus\Desktop\ASP.NET\App\App.Web\bin\Debug\net8.0\App.Web.staticwebassets.runtime.json

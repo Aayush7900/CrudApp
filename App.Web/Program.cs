@@ -3,6 +3,7 @@ using App.Application.Mappings;
 using App.Core.Interfaces;
 using App.Infrastructure.Data;
 using App.Infrastructure.DependencyInjection;
+using App.Infrastructure.Repo;
 using Application.Services;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -16,11 +17,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRespository>();
-
+builder.Services.AddScoped<IProductCategory, ProductCategoryRepo>();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
+
 //Source :https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/docs/configure-and-customize-swaggergen.md#add-security-definitions-and-requirements
-builder.Services.AddSwaggerGen(swagger => {
+/*builder.Services.AddSwaggerGen(swagger => {
     swagger.SwaggerDoc("v1", new OpenApiInfo {
         Version = "v1",
         Title = "ASP.NET 8 Web API",
@@ -43,8 +45,8 @@ builder.Services.AddSwaggerGen(swagger => {
             },Array.Empty<string>()
         }
     });
-});
-
+});*/
+builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowReactApp",
         policy => policy.WithOrigins("http://localhost:5173") // React dev server
@@ -64,9 +66,9 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors("AllowReactApp");
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
-
+//app.UseAuthentication();
+//app.UseAuthorization();
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();
