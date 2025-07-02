@@ -1,5 +1,114 @@
 [
   {
+    "ContainingType": "App.Web.Controllers.ProductController",
+    "Method": "GetById",
+    "RelativePath": "api/Product/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductController",
+    "Method": "Create",
+    "RelativePath": "api/Product/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductCategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductController",
+    "Method": "GetAll",
+    "RelativePath": "api/Product/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductController",
+    "Method": "Delete",
+    "RelativePath": "api/Product/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "App.Web.Controllers.ProductController",
+    "Method": "Update",
+    "RelativePath": "api/Product/edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProductCategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "App.Web.Controllers.ProductCategoryController",
     "Method": "GetByName",
     "RelativePath": "api/ProductCategory/{Name}",
@@ -18,7 +127,7 @@
   {
     "ContainingType": "App.Web.Controllers.ProductCategoryController",
     "Method": "Create",
-    "RelativePath": "api/ProductCategory/add/{Name}",
+    "RelativePath": "api/ProductCategory/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -26,7 +135,7 @@
       {
         "Name": "Name",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "ImagePath",
@@ -49,14 +158,14 @@
   {
     "ContainingType": "App.Web.Controllers.ProductCategoryController",
     "Method": "Delete",
-    "RelativePath": "api/ProductCategory/delete/{Name}",
+    "RelativePath": "api/ProductCategory/delete/{Id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
+        "Name": "Id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -84,80 +193,6 @@
         "Name": "ImagePath",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "App.Web.Controllers.ProductsController",
-    "Method": "GetById",
-    "RelativePath": "api/Products/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "App.Web.Controllers.ProductsController",
-    "Method": "Create",
-    "RelativePath": "api/Products/add",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "App.Application.DTO.CreateProductDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "App.Web.Controllers.ProductsController",
-    "Method": "GetAll",
-    "RelativePath": "api/Products/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "App.Web.Controllers.ProductsController",
-    "Method": "Delete",
-    "RelativePath": "api/Products/delete/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "App.Web.Controllers.ProductsController",
-    "Method": "Update",
-    "RelativePath": "api/Products/edit",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "App.Application.DTO.UpdateProductDTO",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []

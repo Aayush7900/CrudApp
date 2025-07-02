@@ -1,11 +1,7 @@
 using App.Application.Interfaces;
-using App.Application.Mappings;
-using App.Core.Interfaces;
 using App.Infrastructure.Data;
 using App.Infrastructure.DependencyInjection;
 using App.Infrastructure.Repo;
-using Application.Services;
-using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
@@ -15,14 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IProductRepository, ProductRespository>();
+builder.Services.AddScoped<IProduct, ProductRepo>();
 builder.Services.AddScoped<IProductCategory, ProductCategoryRepo>();
-builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-
 
 //Source :https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/docs/configure-and-customize-swaggergen.md#add-security-definitions-and-requirements
-/*builder.Services.AddSwaggerGen(swagger => {
+builder.Services.AddSwaggerGen(swagger => {
     swagger.SwaggerDoc("v1", new OpenApiInfo {
         Version = "v1",
         Title = "ASP.NET 8 Web API",
@@ -41,15 +34,15 @@ builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
                 Reference = new OpenApiReference {
                     Type = ReferenceType.SecurityScheme,
                     Id = "Bearer"
-                }
+                } 
             },Array.Empty<string>()
         }
     });
-});*/
+});
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowReactApp",
-        policy => policy.WithOrigins("http://localhost:5173") // React dev server
+        policy => policy.WithOrigins("http://localhost:5173") // React dev server.
                         .AllowAnyHeader()
                         .AllowAnyMethod());
 });
@@ -66,8 +59,8 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors("AllowReactApp");
 app.UseHttpsRedirection();
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseStaticFiles();
 app.MapControllers();
 

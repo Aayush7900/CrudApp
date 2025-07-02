@@ -14,6 +14,7 @@ namespace App.Infrastructure.Repo {
         public async Task<List<ProductCategoryDTO>> GetAllCategoriesAsync() {
             return await _context.ProductCategory
                 .Select(p => new ProductCategoryDTO {
+                    Id = p.Id,
                     Name = p.Name,
                     ImagePath = p.ImagePath,
                 })
@@ -36,9 +37,9 @@ namespace App.Infrastructure.Repo {
             });
             await _context.SaveChangesAsync();
         }
-        public async Task DeleteCategoryAsync(string categoryName) {
+        public async Task DeleteCategoryAsync(int Id) {
             await _context.ProductCategory
-                .Where(p => p.Name.ToLower() == categoryName.ToLower())
+                .Where(p => p.Id == Id)
                 .ExecuteDeleteAsync();
             await _context.SaveChangesAsync();
 
@@ -53,7 +54,7 @@ namespace App.Infrastructure.Repo {
         }
         public async Task<string> SaveFile(IFormFile file) {
             if (file == null || file.Length == 0) { return string.Empty ; }
-            string uploadFolder = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot", "images");
+            string uploadFolder = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot", "images/productcategory/");
             if (!Directory.Exists(uploadFolder)) {
                 Directory.CreateDirectory(uploadFolder);
             }
@@ -63,7 +64,7 @@ namespace App.Infrastructure.Repo {
                 await file.CopyToAsync(stream);
             }
            
-            return "/images/"+ fileName;
+            return "/images/productcategory/"+ fileName;
         }
 
     }

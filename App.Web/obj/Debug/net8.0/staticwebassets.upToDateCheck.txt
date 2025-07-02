@@ -5,3 +5,13 @@ wwwroot\images\7a1169e7-2cde-4fad-9ed4-7f0198565b71.pSwhjfLi92oR5glrmiogmgHaHa
 wwwroot\images\854af6c0-ab6c-4891-a28e-d87c25c2465d.jpg
 wwwroot\images\9043991a-e020-438e-a7a4-7a26c596fe15.pSwhjfLi92oR5glrmiogmgHaHa
 wwwroot\images\af1ea58a-4af2-446a-b3cf-0719dc608421.pSwhjfLi92oR5glrmiogmgHaHa
+wwwroot\images\product\1c0c12fa-0b72-4fcd-a6b5-067dd1fe41ad.png
+wwwroot\images\product\226fe7d7-41d2-4b16-aafe-bc20454365a6.jpg
+wwwroot\images\product\590700eb-2086-4d7b-931d-4b267ab978ba.jpg
+wwwroot\images\product\831992a1-94be-4963-b4d5-f6da95cb7139.png
+wwwroot\images\product\855ba258-23cb-46d9-bcb3-428ba03b0b1e.png
+wwwroot\images\product\ea0cfdb6-9380-484c-89b3-e39668f1e422.png
+wwwroot\images\product\f16c9465-9849-4e62-a8a7-3e3a63ca8263.png
+wwwroot\images\product\fdaa6481-f047-43de-bcec-98e12d71e2f6.png
+wwwroot\images\productcategory\e8569d7c-e532-4923-ab3e-071cddfbba33.png
+wwwroot\images\productcategory\ee2dbe9f-2cb3-47e1-9341-ac5c0b29a11e.png
